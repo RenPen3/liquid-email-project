@@ -4,15 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liquid Email Project</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+
+
     <script type="text/template">
-      <h3>{{ name | capitalize | prepend: "Hello "}}</h3>
+
+
+      <h1>{{ cart.total | prepend: "$" }}</h1>
+
+      <p>{{ user.email | prepend: "Email: " }}</p>
+
+
     </script>
+
+
+   
     <div id="result"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
 
-    <script type="module" src="/js/app.js"></script>
+
+
+
+    <script>
+      const template = document.querySelector('[type="text/template"]');
+      const result = document.querySelector("#result");
+      const engine = new liquidjs.Liquid();
+
+      engine
+        .parseAndRender(template.innerHTML, { 
+
+          user: {
+            email: "renethedev@gmail.com"
+          },
+
+          cart: {
+            total: 45.99
+          }
+
+
+
+
+
+
+
+
+
+
+
+        })
+        .then((html) => (result.innerHTML = html));
+    </script>
+
+
+
+
+
+
   </body>
 </html>
