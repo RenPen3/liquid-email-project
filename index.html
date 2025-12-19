@@ -12,9 +12,19 @@
     <script type="text/template">
 
 
-      <h1>{{ cart.total | prepend: "$" }}</h1>
+    
+    <div>
+      <ul class="header">
+        {% assign links = "Home, Skills, About, Projects, Contact" | split: ", " %}
+        {%- for link in links -%}
+        <li>
+          <a href="#">{{ link }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
 
-      <p>{{ user.email | prepend: "Email: " }}</p>
+
 
 
     </script>
