@@ -1,44 +1,719 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liquid Email Project</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-
-
     <script type="text/template">
 
 
-    
-    <div>
-      <ul class="header">
-        {% assign links = "Home, Skills, About, Projects, Contact" | split: ", " %}
-        {%- for link in links -%}
-        <li>
-          <a href="#">{{ link }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
 
-    <h1>Helllo!</h1>
-
-
-
-
+      <header>
+        <nav class="nav">
+          <a class="nav-logo" href="#">Rene D. Perez</a>
+          <ul class="nav-menu">
+            {% assign links = "Home, Skills, About, Projects, Contact" | split: ", " %}
+            {%- for link in links -%}
+            <li>
+              <a href="#">{{ link }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </header>
     </script>
 
+    
 
-   
+ 
+  </body>
+</html> -->
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="x-apple-disable-message-reformatting" />
+
+    <meta
+      name="format-detection"
+      content="telephone=no,address=no,email=no,date=no,url=no"
+    />
+
+    <meta name="color-scheme" content="light dark" />
+
+    <meta name="supported-color-schemes" content="light dark" />
+
+    <title>Basic Email Template</title>
+  </head>
+  <!--[if gte mso 9]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  <![endif]-->
+
+  <!-- Force safe font in Outlook -->
+
+  <!--[if mso]>
+    <style>
+      * {
+        font-family: Arial, sans-serif !important;
+      }
+    </style>
+  <![endif]-->
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+
+    html,
+    body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    div[style*="margin: 16px 0"] {
+      margin: 0 !important;
+    }
+
+    #MessageViewBody,
+    #MessageWebViewDiv {
+      width: 100% !important;
+    }
+
+    table,
+    td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a[x-apple-data-detectors],
+    .unstyle-auto-detected-links a,
+    .aBn {
+      border-bottom: 0 !important;
+      cursor: default !important;
+      color: inherit !important;
+      text-decoration: none !important;
+
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    .im {
+      color: inherit !important;
+    }
+
+    .a6S {
+      display: none !important;
+      opacity: 0.01 !important;
+    }
+
+    img.g-img + div {
+      display: none !important;
+    }
+
+    .cta-show {
+      display: none !important;
+    }
+
+    /* Gmail iOS right-gutter fixes */
+
+    @media only screen and (max-width: 320px) and (max-device-width: 374px) {
+      u ~ div .email-container {
+        max-width: 320px !important;
+      }
+
+      .col-break {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+
+    @media only screen and (max-width: 375px) and (max-device-width: 413px) {
+      u ~ div .email-container {
+        max-width: 375px !important;
+      }
+    }
+
+    @media only screen and (max-width: 414px) {
+      u ~ div .email-container {
+        max-width: 414px !important;
+      }
+    }
+
+    @media screen and (max-width: 540px) {
+      .alignCenter {
+        display: block !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+      }
+
+      .fullWidth-logo {
+        display: block;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      .fullWidth {
+        width: 90% !important;
+        max-width: 90% !important;
+      }
+
+      .card-img {
+        width: 100% !important;
+        max-width: 100px !important;
+      }
+
+      .text-content-left {
+        text-align: left !important;
+      }
+
+      .col-break {
+        display: block;
+        padding: 0px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 40px !important;
+      }
+    }
+
+    /* Hover */
+
+    .button-td,
+    .button-a {
+      transition: all 100ms ease-in;
+    }
+
+    .button-td-primary:hover,
+    .button-a-primary:hover {
+      background: #555555 !important;
+      border-color: #555555 !important;
+    }
+  </style>
+
+  <body
+    width="100%"
+    style="
+      padding: 0 !important;
+      background-color: #c7c7c7;
+      font-family: Arial, Helvetica, sans-serif;
+    "
+  >
+    <center
+      role="article"
+      aria-roledescription="email"
+      lang="en"
+      style="width: 100%"
+    >
+      <!-- Hidden Preheader -->
+      <div
+        style="max-height: 0; overflow: hidden; mso-hide: all"
+        aria-hidden="true"
+      >
+        Thanks for subscribing - here's what's new, plus tips and resources
+        inside.
+      </div>
+      <!-- Preview Text Spacing Hack -->
+      <div
+        style="
+          display: none;
+          font-size: 1px;
+          line-height: 1px;
+          max-height: 0px;
+          max-width: 0px;
+          opacity: 0;
+          overflow: hidden;
+          mso-hide: all;
+          font-family: sans-serif;
+        "
+      >
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+      </div>
+      <!-- Start of Email -->
+
+      <script type="text/template">
+          <div style="max-width: 640px; margin: 0 auto" class="email-container">
+            <!--[if mso]>
+          <table width="640" align="center" cellpadding="0" cellspacing="0" border="0" role="presentation">
+          <tr>
+          <td>
+          <![endif]-->
+
+            <!-- Header -->
+            <table
+              width="100%"
+              align="center"
+              cellpadding="0"
+              cellspacing="0"
+              border="0"
+              role="presentation"
+              bgcolor="#fafafa"
+              style="background-color: #fafafa"
+            >
+              <tr>
+                <td valign="middle" style="padding: 0 24px;">
+                  <table
+                    class="fullWidth-logo"
+                    align="left"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                    role="presentation"
+                  >
+                    <tr>
+                      <td class="alignCenter" align="left">
+                        <a href="#">
+                          <h3
+                            style="
+                              font-size: 22px;
+                              font-weight: 800;
+                              color: #242424;
+                              margin: 0;
+                            "
+                          >
+                          {{user.company}}<span
+                              style="
+                                font-size: 22px;
+                                font-weight: 400;
+                                color: #d34e4e;
+                              "
+                              >{{user.company_span}}</span
+                            >
+                          </h3>
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                  <table
+                    align="center"
+                    class="fullWidth-logo"
+                    align="center"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                    role="presentation" style="vertical-align: middle;"
+                  >
+                    <tr>
+                      <td align="center" valign="middle">
+                        <a href="#">
+                          <p style="font-size: 16px; color: #242424;margin: 0;">Men's</p>
+                        </a>
+                      </td>
+                      <td align="center" valign="middle">
+                        <a href="#">
+                          <p style="font-size: 16px; color: #242424;margin: 0;">Women's</p>
+                        </a>
+                      </td>
+                      <td align="center" valign="middle">
+                        <a href="#">
+                          <p style="font-size: 16px; color: #242424;margin: 0;">Kid's</p>
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!-- /Header -->
+
+             <!-- Hero Image -->
+          <table
+          width="100%"
+          align="center"
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+          role="presentation"
+        >
+          <tr>
+            <td align="center">
+              <a href="#">
+                <img
+                  src="https://placehold.co/1200x800/444444/999"
+                  alt="Hero Image"
+                  style="
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                  "
+                />
+              </a>
+            </td>
+          </tr>
+        </table>
+        <!-- /Hero Image -->
+
+        <!-- Body Content -->
+        <table
+          width="100%"
+          align="center"
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+          role="presentation"
+          bgcolor="#FAFAFA"
+          style="background-color: #fafafa"
+        >
+          <tr>
+            <td align="left">
+              <h1
+                style="
+                  color: #1c1c1c;
+                  padding: 0 24px;
+                  margin: 24px 0 0 0;
+                  line-height: 40px;
+                  text-transform: uppercase;
+                "
+              >
+                {{user.name | capitalized | prepend: "Welcome, " | append: "!"}}
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" style="padding: 0 24px">
+              <p
+                style="
+                  font-size: 16px;
+                  font-weight: 400;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  line-height: 26px;
+                  color: #1c1c1c;
+                "
+              >
+                Lorem ipsum dolor consectetur, adipisicing elit. Dolorem
+                repellendus neque repudiandae quaerat porro illo tempore cum sed
+                at saepe.
+                <strong>sit amet consectetur</strong> adipisicing elit. Esse non
+                eveniet
+                <a
+                  href="#"
+                  style="
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    color: #ff0022;
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                  "
+                  >Admodi Goluptatem</a
+                >
+                exercitationem
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" style="padding: 0 20px 0 20px">
+              <p
+                style="
+                  font-size: 16px;
+                  font-weight: 400;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  line-height: 26px;
+                  color: #1c1c1c;
+                "
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                atque! Libero, commodi. Minus odio ex earum
+                <strong>veniam necessitatibus</strong> aliquam quidem, commodi
+                illum facere dolores rerum,
+                <strong>molestiae perspiciatis</strong>.
+              </p>
+            </td>
+          </tr>
+        </table>
+        <!-- /Body Content -->
+
+        <!-- Responsive 30px Spacer 2 -->
+        <table
+          width="100%"
+          cellspacing="0"
+          cellpadding="0"
+          border="0"
+          role="presentation"
+          style="min-height: 30px; height: 30px"
+          bgcolor="#FAFAFA"
+          style="background-color: #fafafa"
+        >
+          <tr>
+            <td
+              height="30"
+              style="height: 30px; line-height: 30px; font-size: 1px"
+            >
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+        <!-- /Responsive 30px Spacer 2 -->
+
+        <!-- Card Section -->
+        <table
+          align="center"
+          width="100%"
+          cellspacing="0"
+          cellpadding="0"
+          border="0"
+          role="presentation"
+          bgcolor="#FAFAFA"
+        >
+          <tr>
+            <td
+              class="col-break"
+              align="center"
+              valign="top"
+              style="padding: 0 16px"
+            >
+              <table
+                class="fullWidth"
+                width="270"
+                style="width: 270px"
+                align="center"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+                role="presentation"
+              >
+                <tr>
+                  <td class="text-content-left" align="left">
+                    <a href="#">
+                      <!-- src="images/card_img.webp" -->
+                      <img
+                        src="https://placehold.co/600x600/444444/999"
+                        width="100%"
+                        alt="box 1 image"
+                        style="
+                          display: block;
+                          width: 100%;
+                          max-width: 100%;
+                          border-radius: 10px;
+                        "
+                      />
+                    </a>
+                    <h4
+                      style="
+                        font-size: 18px;
+                        color: #000000;
+                        margin: 10px 0 0 0;
+                        line-height: 22px;
+                        text-align: left;
+                      "
+                    >
+                      Lorem ipsum dolor sit
+                    </h4>
+                    <p
+                      style="
+                        font-size: 16px;
+                        color: #000000;
+                        margin: 10px 0 0 0;
+                        line-height: 24px;
+                        text-align: left;
+                      "
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Delectus, autem? Mollitia, laudantium?
+                    </p>
+                    <a
+                      href="#"
+                      style="
+                        display: inline-block;
+                        color: #d34e4e;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        font-weight: 600;
+                        text-decoration: underline;
+                        text-underline-offset: 3px;
+                        text-decoration-thickness: 1.5px;
+                        /* border-radius: 4px; */
+                        line-height: 20px;
+                        margin: 20px 0 0 0;
+                      "
+                      >Lorem ipsum dolor</a
+                    >&nbsp;
+                    <span
+                      style="
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 100px;
+                        background-color: #6db597;
+                        color: #ffffff;
+                        padding: 0 4px;
+                        vertical-align: middle;
+                        text-decoration: none;
+                      "
+                      >>
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td
+              class="col-break"
+              align="center"
+              valign="top"
+              style="padding: 0 16px"
+            >
+              <table
+                class="fullWidth"
+                width="270"
+                style="width: 270px"
+                align="center"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+                role="presentation"
+              >
+                <tr>
+                  <td class="text-content-left" align="left">
+                    <a href="#">
+                      <!-- src="images/card_img.webp" -->
+                      <img
+                        src="https://placehold.co/600x600/444444/999"
+                        width="100%"
+                        alt="box 1 image"
+                        style="
+                          display: block;
+                          width: 100%;
+                          max-width: 100%;
+                          border-radius: 10px;
+                        "
+                      />
+                    </a>
+                    <h4
+                      style="
+                        font-size: 18px;
+                        color: #000000;
+                        margin: 10px 0 0 0;
+                        line-height: 22px;
+                        text-align: left;
+                      "
+                    >
+                      Lorem ipsum dolor sit
+                    </h4>
+                    <p
+                      style="
+                        font-size: 16px;
+                        color: #000000;
+                        margin: 10px 0 0 0;
+                        line-height: 24px;
+                        text-align: left;
+                      "
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Delectus, autem? Mollitia, laudantium?
+                    </p>
+                    <a
+                      href="#"
+                      style="
+                        display: inline-block;
+                        color: #d34e4e;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        font-weight: 600;
+                        text-decoration: underline;
+                        text-underline-offset: 3px;
+                        text-decoration-thickness: 1.5px;
+                        /* border-radius: 4px; */
+                        line-height: 20px;
+                        margin: 20px 0 0 0;
+                      "
+                      >Lorem ipsum dolor</a
+                    >&nbsp;
+                    <span
+                      style="
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 100px;
+                        background-color: #6db597;
+                        color: #ffffff;
+                        padding: 0 4px;
+                        vertical-align: middle;
+                        text-decoration: none;
+                      "
+                      >>
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- /Card Section -->
+
+        <!-- Responsive 30px Spacer 2 -->
+        <table
+          width="100%"
+          cellspacing="0"
+          cellpadding="0"
+          border="0"
+          role="presentation"
+          style="min-height: 30px; height: 30px; background-color: #fafafa"
+          bgcolor="#FAFAFA"
+        >
+          <tr>
+            <td
+              height="30"
+              style="height: 30px; line-height: 30px; font-size: 1px"
+            >
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+        <!-- /Responsive 30px Spacer 2 -->
+
+
+          </div>
+          <!-- End of Email -->
+      </script>
+    </center>
+
     <div id="result"></div>
-
+    <!-- For Development -->
     <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
-
-
-
 
     <script>
       const template = document.querySelector('[type="text/template"]');
@@ -46,34 +721,19 @@
       const engine = new liquidjs.Liquid();
 
       engine
-        .parseAndRender(template.innerHTML, { 
-
+        .parseAndRender(template.innerHTML, {
           user: {
-            email: "renethedev@gmail.com"
+            name: "Maria",
+            company: "American",
+            company_span: "Known",
+            email: "perezthedev@gmail.com",
           },
 
           cart: {
-            total: 45.99
-          }
-
-
-
-
-
-
-
-
-
-
-
+            total: 45.99,
+          },
         })
         .then((html) => (result.innerHTML = html));
     </script>
-
-
-
-
-
-
   </body>
 </html>
