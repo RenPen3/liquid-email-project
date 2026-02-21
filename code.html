@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liquid Email Project</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <script type="text/template">
+
+
+
+      <header>
+        <nav class="nav">
+          <a class="nav-logo" href="#">Rene D. Perez</a>
+          <ul class="nav-menu">
+            {% assign links = "Home, Skills, About, Projects, Contact" | split: ", " %}
+            {%- for link in links -%}
+            <li>
+              <a href="#">{{ link }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </header>
+    </script>
+  </body>
+</html>
